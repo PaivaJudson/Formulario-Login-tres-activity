@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FormularioLogin">
         <activity
+            android:name=".LoginErradoActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginOkActivity"
             android:exported="false" />
         <activity
