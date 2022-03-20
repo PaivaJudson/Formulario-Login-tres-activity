@@ -30,16 +30,18 @@ public class MainActivity extends AppCompatActivity {
                 String user = edt_userName.getText().toString();
                 String password = edt_password.getText().toString();
 
-                if (user.equals("user") && password.equals("12345")){
-                    Intent intent = new Intent(MainActivity.this, LoginOkActivity.class);
-                    startActivity(intent);
-
-                }else if(user.isEmpty() || password.isEmpty()){
+                if(user.isEmpty() || password.isEmpty()){
                     Toast.makeText(MainActivity.this, "Campos Vazios", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    if (user.equals("user") && password.equals("12345")) {
+                        Intent intent = new Intent(MainActivity.this, LoginOkActivity.class);
+                        startActivity(intent);
 
-                }else if (!user.equals("user") || !password.equals("12345")){
-                    Intent intent = new Intent(MainActivity.this, LoginErradoActivity.class);
-                    startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(MainActivity.this, LoginErradoActivity.class);
+                        startActivity(intent);
+                    }
                 }
 
             }
